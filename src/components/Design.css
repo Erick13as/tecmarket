@@ -1,0 +1,1491 @@
+src\components\Design.css
+/* Agrega estas clases a tu design.css */
+/* styles.css */
+/* Clase para las celdas de la tabla */
+.table-cell {
+  padding: 8px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+/* Clase para las filas de la tabla */
+.table-row {
+  background-color: #f5f5f5;
+}
+.confirmed-order {
+  background-color: rgb(175, 114, 76); /* Cambia esto al color que desees */
+  color: white;
+}
+/* Agrega más estilos CSS según sea necesario */
+.detalles-orden-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+.centered-container {
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utiliza la altura completa de la ventana */
+  max-width: 735px; /* Cambia el valor según tus preferencias */
+  margin: 0 auto; /* Para centrar horizontalmente */
+  padding: 20px; /* Agrega relleno si es necesario */
+  box-sizing: border-box; /* Asegura que el relleno y el borde no afecten las dimensiones finales */
+}
+
+.notificaciones-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: #cdb4b4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.unread-notification {
+  background-color: #fff; /* Fondo blanco para notificaciones no leídas */
+  border: 1px solid #8a0c0c; /* Bordes adicionales o cambio de color según sea necesario */
+  border-radius: 8px;
+}
+.notificacion-item {
+  margin-top: 20px;
+}
+
+.notificacion-details {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.botonOA2 {
+  position: relative;
+}
+
+.notification-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
+}
+.notificaciones-header {
+  text-align: center;
+}
+.notificaciones-container-wrapper {
+  max-width: 800px; /* Ajusta el valor según sea necesario */
+  margin: 0 auto; /* Centra el contenedor en la pantalla */
+  overflow-y: auto; /* Agrega desplazamiento vertical si el contenido es demasiado grande */
+}
+
+.notificaciones-list {
+  list-style-type: none;
+  padding: 0;
+}
+h1Orden {
+  font-size: 24px;
+}
+h2Orden {
+  font-size: 20px;
+}
+ulOrden {
+  list-style: none;
+  padding: 0;
+}
+liOrden {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+imgOrden {
+  max-width: 100px;
+  height: auto;
+}
+pOrden {
+  margin: 0;
+}/* Agrega estas clases a tu design.css */
+.orden-container {
+  background-color: #fff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 15px; /* Espacio interno */
+  margin-bottom: 10px; /* Espacio entre órdenes */
+}
+
+/* Estilos para el contenedor principal */
+.CerraCompra-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+}
+
+/* Estilos para la cabecera */
+.header-containerDetallesOrden {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: #fff;
+  padding: 8px;
+}
+
+.header-buttonOrden {
+  background-color: #4285f4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.header-buttonOrden:hover {
+  background-color: #3573c3;
+}
+
+/* Estilos para los detalles de la orden */
+.order-details-container {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.order-details-container h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.order-details-container p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Estilos para la imagen del comprobante de pago */
+.order-details-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+/*-----------------------------------------------------------------------------------------------------------------------*/
+/* Estilo para el contenedor principal */
+.pendientes-container {
+  background-image: url('../../public/backgroundImage.jpg'); /* Reemplaza URL_DE_TU_IMAGEN con la URL de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la pantalla */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.CerrarCompra-container{
+  background-image: url('../../public/backgroundImage.jpg'); /* Reemplaza URL_DE_TU_IMAGEN con la URL de tu imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos toda la altura de la pantalla */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Estilo para el título principal */
+h1Ordenes {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+/* design.css */
+.lista-ordenes {
+  background-color: #ffffff; /* Fondo blanco */
+}
+
+
+/* Estilo para la lista de órdenes */
+.ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  
+}
+
+/* Estilo para cada elemento de la lista de órdenes */
+.li {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: left;
+}
+
+/* Estilo para los botones de selección */
+buttonOrdenesPendientes {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* Estilo para la orden seleccionada */
+h2Ordenes {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+/* Estilo adicional para detalles de la orden seleccionada (personaliza según tus necesidades) */
+.selected-orden-details {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.edit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.cancel-button {
+  padding: 10px 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/* Campo de entrada de texto en modo de edición */
+input[type="text"],
+input[type="number"] {
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+/* Etiquetas y otros estilos de texto */
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  margin: 10px 0;
+}
+.input-containerProducto {
+  margin-bottom: 10px;
+}
+
+.input-containerProducto label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+  color: #333; /* Puedes ajustar el color según tu diseño */
+}
+.subir_producto-container {
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  min-height: 100vh;
+  background-image: url('../../public/backgroundImage.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.formUploadProducto {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 10px;
+}
+
+.titleSubirProducto {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.textBoxUploadProducto {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+
+.botonSubirProducto {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.messageProducto {
+  color: red;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+/* Clase para centrar horizontalmente el precio */
+.precio {
+  text-align: center;
+}
+/* Estilos para el contenedor en la parte superior */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 10px;
+  width: 100%; 
+}
+.header-containerProducto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 8px;
+  width: 98.97%; 
+}
+.header-containerEditarProducto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 8px;
+  width: 105%; 
+}
+.header-containerOrdenesPendientes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 8px;
+  width: 99%;
+  position: fixed;
+  top: 0;
+}
+
+.header-containerVerMas{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 8px 20px;
+  width: 100%; 
+  top:0;
+  
+}
+/* Estilos para los botones en el contenedor superior */
+.header-buttonProducto {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+/* Estilos para los botones en el contenedor superior */
+.header-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Cambiar el color de fondo de los botones al pasar el mouse */
+.header-button:hover {
+  background-color: #0056b3;
+}
+.inicio-button {
+  margin-left: 10px; /* Agrega margen izquierdo de 10px */
+  margin-right: 10px; /* Agrega margen derecho de 10px */
+}
+
+/* Estilo específico para el botón "Ordenes" */
+#ordenes-button {
+  margin-right: -1080px; /* Agregar un margen a la derecha  */
+}
+
+/* Estilo específico para el botón "Mi carrito" */
+#carrito-button {
+  margin-right: 7.5px; /* Agregar un margen a la derecha  */
+}
+
+.inicio-buttonAdmin {
+  margin-left: 10px; /* Agrega margen izquierdo de 10px */
+  margin-right: 10px; /* Agrega margen derecho de 10px */
+}
+
+/* Estilo específico para el botón "Ordenes" */
+#ordenes-buttonAdmin {
+  margin-right: -990px; /* Agregar un margen a la derecha  */
+}
+
+/* Estilo específico para el botón "Mi carrito" */
+#carrito-buttonAdmin {
+  margin-right: 7.5px; /* Agregar un margen a la derecha  */
+}
+
+
+
+/* Clase para contenedor de productos */
+.productos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Espacio entre productos */
+}
+
+/* Clase para cada producto en la lista */
+.producto {
+  width: calc(33.33% - 20px); /* Ancho para mostrar 3 productos por fila */
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color:  #fff;
+  border-radius: 9px;
+  margin-right: 0px;
+}
+
+/* Clase para contenedor de imagen de producto */
+.imagen-container2 {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+}
+
+.selected-image {
+  max-width: 100%;
+  max-height: 200px; /* Establece un tamaño máximo o ajusta según tus necesidades */
+  display: block;
+  margin-top: 10px; /* Añade un espacio entre la imagen y el botón */
+}
+
+/* Clase para contenedor de detalles del producto */
+.details-container {
+  padding: 10px;
+}
+
+/* Clase para el botón "Ver detalles" */
+.botonImagen2 {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* Estilo para los títulos de producto */
+.titleAccederTienda {
+  text-align: center;
+  margin-bottom: 10px; /* Ajusta el margen inferior según tus preferencias */
+  color: #333;
+}
+
+
+
+/* Otros estilos que desees mantener de tu archivo original Design.css */
+/* ... */
+
+
+.centered-carousel {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  width: 100%; /* Ancho del carrusel igual al 100% */
+}
+.compra-container {
+  background-image: url('../../public/backgroundImage.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-position: center;
+  background-attachment: fixed;
+}
+.vmasC-container {
+  background-image: url('../../public/backgroundImage.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 92.3vh;
+  background-position: center;
+  background-attachment: fixed;
+}
+.header-containerVerMas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #a4b5be8b;
+  color: #fff;
+  padding: 10px;
+  width: 100%; 
+}
+.EditarProducto-container {
+  background-image: url('../../public/backgroundImage.jpg');
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  padding: 40px;
+  flex-direction: column;
+  min-height: auto;
+  width: auto;
+  background-position: center top;
+  background-attachment: fixed;
+  margin: auto;
+  margin-top: auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: auto;
+  padding-inline-end: 1%;
+  background-origin: padding-box; /* El fondo se coloca y dimensiona desde el borde interior del padding */
+}
+
+.image-info-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 120px;
+}
+
+.image-button-container,
+.product-info {
+  background-color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.product-info {
+  background-color: white;
+  opacity: 0.7;
+  flex: 1;
+}
+
+.imagen-galeria-container2 {
+  max-width: 100%;
+}
+
+.imagen-carrusel {
+  max-width: 200px; /* Ajusta el tamaño máximo según tus necesidades */
+  display: block;
+  margin: 0 auto; /* Centra horizontalmente */
+}
+
+/* Clase para hacer los botones más pequeños */
+.boton-pequeno {
+  padding: 2px 5px; /* Ajusta el padding para cambiar el tamaño */
+  font-size: 8px; /* Ajusta el tamaño de fuente */
+}
+
+/* Clase para agregar margen izquierdo */
+.margen-izquierdo {
+  margin-left: 10px; /* Ajusta la cantidad de margen izquierdo */
+}
+/* Clase para agregar margen izquierdo */
+.margen-izquierdo2 {
+  margin-left: 1100px; /* Ajusta la cantidad de margen izquierdo */
+}
+
+.sign_in-container {
+    display: flex;
+    justify-content: center;
+    min-height: auto;
+  }
+
+  .sign_up-container {
+    display: flex;
+    justify-content: center;
+    min-height: 106vh;
+  }
+
+  .agenda-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 115vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .subir_imagen-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .crearCategoria-containter {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .eliminarCategoria-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .pago-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .opcionesAdmin-container {
+    display: flex;
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .imagen-container {
+    display: flex;
+    height: 71vh;
+  }
+
+  .imagen-container-info {
+    display: flex;
+    height: 71vh;
+    width: 71vh;
+    height: 71vh;
+  }
+
+  .formImagen {
+    width: 350px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    position: absolute;
+    top: 100px;
+    left: 925px;
+  }
+
+  .formImagenInfo {
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .formImagenInfoAdmin {
+    width: 350px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 50px;
+  }
+
+  .textarea-description {
+    resize: none; /* Prevent manual resizing */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    font-size: 14px; /* Adjust font size */
+  }
+
+  .textarea-detalles {
+    resize: none; /* Prevent manual resizing */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    font-size: 14px; /* Adjust font size */
+    border: 1px solid #070000;
+  }
+
+
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%; /* Ancho del carrusel igual al 100% */
+  }
+  
+  .imagen-galeria-container {
+    max-width: 100%; /* Ancho máximo de las imágenes igual al 100% */
+    margin: 1rem;
+  }
+  
+  /* Clase para la imagen en el producto */
+  .imagen-galeria-container2 img {
+    width: 200px; /* Establece el ancho deseado */
+    height: 300px; /* Establece el alto deseado */
+    object-fit: cover; /* Ajusta el comportamiento de la imagen para cubrir el contenedor */
+  }
+
+  .add-to-cart-button {
+    background-color: rgb(226, 68, 144); /* Color de fondo del botón después de agregar al carrito */
+    color: white; /* Color del texto después de agregar al carrito */
+    border: none;
+    padding: 10px 20px;
+    cursor: default; /* Deshabilitar el botón después de agregar al carrito */
+    font-size: 16px;
+    border-radius: 5px;
+
+  }
+  /* CSS para el botón después de agregar al carrito */
+  .added-to-cart {
+    background-color: rgb(116, 43, 78); /* Color de fondo del botón después de agregar al carrito */
+    color: white; /* Color del texto después de agregar al carrito */
+    border: none;
+    padding: 10px 20px;
+    cursor: default; /* Deshabilitar el botón después de agregar al carrito */
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  .main_page-container {
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    background-image:  #fff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .main-container {
+    flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    align-items: center;
+    background-image:  #fff;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  .galeria-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .search_page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .details_page-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .formContainer {
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formContainerInfo {
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formSignIn {
+    width: auto;
+    height: 450px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .transparent {
+    background-color: rgba(255,255,255,0,5);
+  }
+
+  .glass {
+    background: linear-gradient(135deg, rgba(255,255,0.1), rgba(255,255,255,0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .formCC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    height: 450px;
+    padding: 20px;
+    background-color:  #f5f5f573;
+    border-radius: 8px;
+  }
+
+  .formCCPago {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 700px;
+    min-height: auto;
+    padding: 20px;
+    background-color:  #f5f5f573;
+    border-radius: 8px;
+  }
+
+  .formCC div {
+  margin-bottom: 10px; /* Agrega un espacio en blanco de 10px debajo de cada div dentro del formulario */
+}
+
+.espaciado {
+  border-bottom: 1px solid #ccc; /* Agrega un separador en la parte inferior de cada div */
+  padding-bottom: 10px; /* Opcional: agrega espacio en blanco debajo del separador */
+}
+
+  .formCCC {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 750px;
+    height: 550px;
+    padding: 20px;
+    background-color:  #f5f5f573;
+    border-radius: 8px;
+  }
+
+  .formTotal {
+    display: flex;
+    background-color:  #915a5a73;
+    width: 170px;
+    height: 40px;
+    justify-content: space-evenly;
+    border-radius: 4px;
+    padding: auto;
+
+  }
+
+  .centrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  .formTopOA {
+    background-color: #ab8383;
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .formBottomOA {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 450px;
+    padding: 20px;
+    background-color:  #f5f5f573;
+    border-radius: 8px;
+  }
+
+  .formBarra {
+    background-color: #ab8383;
+    width: 100%;
+    height: 50px;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .botonBarra-container {
+    margin-left: auto; /* Empuja el botón hacia la derecha */
+  }
+
+  .formFiltro {
+    width: auto;
+    height: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formFiltro > * + * {
+    margin-left: 10px; /* Ajusta el valor según el espaciado deseado */
+  }
+
+  .formDetails {
+    width: 600px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formFacets {
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    display: none;
+    position: absolute;
+    top: 240px;
+    left: 1px;
+  }
+
+  .formSignUp {
+    width: 350px;
+    height: 584px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formSongs {
+    width: 600px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+
+  .formLogOut {
+    width: 200px;
+    height: 30px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: -20px;
+    position: absolute;
+    top: 1px;
+    right: 1px;
+  }
+
+  .formSearch {
+    width: 300px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+  }
+  
+  .title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+
+  .titleImagen {
+    text-align: center;
+    margin-bottom: -5px;
+    color: #333;
+  }
+  
+  .titleDetails {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-Family: Arial Black, sans-serif;
+  }
+
+  .text {
+    margin-top: 10px;
+    color: #555;
+  }
+
+  .textP {
+    margin-top: 10px;
+    color: rgb(125, 33, 129);
+  }
+
+  .textPP {
+    margin-top: 10px;
+    color: rgb(125, 33, 129);
+    font-weight: bold;
+  }
+
+  .custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    background-color:  #ae838373;
+    border-radius: 5px;
+  }
+  
+  .custom-file-upload input[type="file"] {
+    display: none; /* Oculta el control de archivo real */
+  }
+  
+
+  text_ {
+    margin-top: 10px;
+    color: #555;
+  }
+
+  .underlinedText {
+    margin-top: 10px;
+    color: #555;
+    text-decoration: underline;
+  }
+
+  .textDetails {
+    margin-top: 10px;
+    color: #555;
+    font-size: 18px;
+    font-Family: Arial Black, sans-serif;
+  }
+
+  .filterText {
+    margin-top: 10px;
+    color: #555;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .filterText:hover {
+    color: rgb(53, 44, 44); /* Choose the desired highlight color */
+  }
+
+  .lyrics-text {
+    margin-top: 10px;
+    color: #555;
+    font-size: 18px;
+    font-weight: bold;
+    font-Family: Arial Black, sans-serif;
+  }
+  
+  .textBox {
+    width: 278px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .textBox2 {
+    width: 278px;
+    height: 185px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    vertical-align: top;
+  }
+
+  .textBox3 {
+    width: 278px;
+    height: 88px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #0f0101;
+    border-radius: 4px;
+    vertical-align: top;
+  }
+
+  .textBoxSingUp {
+    width: 330px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .textBoxCC {
+    width: 330px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .comboBox {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .buttons {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* font-family: "Arial", sans-serif; */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .botonImagen {
+    width: auto;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* font-family: "Arial", sans-serif; */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .botonCC {
+    margin-top: auto;
+    width: auto;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .botonOA {
+    padding: 10px 20px;
+    background-color: #1a5493;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 40px;
+    margin-left: 20px;
+  }
+
+  .botonOA2 {
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #1a5493;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+  }
+
+  .botonOOA {
+    display: block;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 10px 0;
+    width: 200px;
+    background-color: #1a5493;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 20px;
+  }
+  
+
+  .botonBarra {
+    width: 150px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* font-family: "Arial", sans-serif; */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .botonFijo {
+    width: 150px;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    /* font-family: "Arial", sans-serif; */
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 10px; /* Ajusta la posición vertical según tus necesidades */
+    right: 10px; /* Ajusta la posición horizontal según tus necesidades */
+    z-index: 1;
+  }
+
+  .button-space {
+    margin-right: 10px; /* Puedes ajustar el valor según tus preferencias de espacio */
+  }
+
+  .button-space-tienda {
+    margin-right: -1000px; /* Puedes ajustar el valor según tus preferencias de espacio */
+  }
+  
+  .buttons:hover {
+    background-color: #0056b3;
+  }
+  
+  .buttons:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  .message {
+    text-align: center;
+    display: none;
+    color: #c43838;
+  }
+
+
+  .carrito-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url('../../public/backgroundImage.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .carrito-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .carrito-table th, .carrito-table td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+  }
+  
+  .carrito-table th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+  }
+  
+  .carrito-total {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  .carrito-th {
+    font-weight: bold;
+    text-align: center; 
+    background-color: #f2f2f2;
+  }
+  
+  .carrito-td {
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .carrito-product-img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .carrito-product-actions {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .carrito-quantity-input {
+    width: 30px;
+    text-align: center;
+  }
+  
+  .carrito-remove-button {
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .carrito-remove-button:hover {
+    background-color: #d9534f;
+  }
+  
+  .carrito-checkout-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .carrito-checkout-button:hover {
+    background-color: #0056b3;
+  }
+
+.event-form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro translúcido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que el formulario esté en la capa superior */
+}
+
+.event-form-container {
+  background: white; /* Color de fondo del formulario */
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 1001; /* Asegúrate de que el formulario esté sobre el fondo oscuro */
+  display: flex;
+  flex-direction: column; /* Apila los elementos en una columna */
+  align-items: center;
+  width: 400px;
+}
+
+.event-form-container label {
+  margin-bottom: 8px;
+}
+
+.event-form-container input,
+.event-form-container textarea {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.event-form-container textarea {
+  height: 100px; /* Ajusta según sea necesario */
+}
+
+.event-form-container button {
+  margin-top: 8px;
+}
