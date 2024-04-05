@@ -1198,6 +1198,17 @@ p {
     vertical-align: top;
   }
 
+  .textBox4 {
+    width: 150px;
+    height: 10px;
+    text-align: left;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #0f0101;
+    border-radius: 4px;
+    vertical-align: top;
+  }
+
   .textBoxSingUp {
     width: 330px;
     padding: 10px;

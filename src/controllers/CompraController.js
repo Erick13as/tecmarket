@@ -413,13 +413,10 @@ function DetallesOrdenAdmin() {
 }
 
 const IngresarDireccion = () => {
-  const [provincias, setProvincias] = useState([]);
   const navigate = useNavigate();
-  const [provinciaSeleccionada, setProvinciaSeleccionada] = useState('');
-  const [cantones, setCantones] = useState([]);
-  const [cantonSeleccionado, setCantonSeleccionado] = useState('');
-  const [distritos, setDistritos] = useState([]);
-  const [distritoSeleccionado, setDistritoSeleccionado] = useState('');
+  const [edificioSeleccionado, setEdificioSeleccionado] = useState('');
+  const [telefono, setTelefono] = useState([]);
+  const [aula, setAula] = useState([]);
   const [detalles, setDetalles] = useState('');
   const location = useLocation();
   const email = location.state && location.state.correo;
@@ -428,18 +425,18 @@ const IngresarDireccion = () => {
     e.preventDefault();
   
     // Verifica que todos los campos necesarios estén seleccionados
-    if (provinciaSeleccionada && cantonSeleccionado && distritoSeleccionado && detalles && email) {
+    if (edificioSeleccionado && telefono && aula && detalles && email) {
       try {
-        // Obtiene los nombres correspondientes de provincia, cantón y distrito
-        const provinciaNombre = provincias.find((provincia) => provincia.id === provinciaSeleccionada).nombre;
-        const cantonNombre = cantones.find((canton) => canton.id === cantonSeleccionado).nombre;
-        const distritoNombre = distritos.find((distrito) => distrito.id === distritoSeleccionado).nombre;
+        // Obtiene los nombres correspondientes de edificio, cantón y aula
+        const edificioNumero = edificioSeleccionado;
+        const telefonoNumero = telefono;
+        const aulaNumero = aula;
   
         // Crea un objeto con los datos a guardar
         const direccionData = {
-          provincia: provinciaNombre,
-          canton: cantonNombre,
-          distrito: distritoNombre,
+          edificio: edificioNumero,
+          telefono: telefonoNumero,
+          aula: aulaNumero,
           detalles,
           email,
         };
@@ -473,92 +470,23 @@ const IngresarDireccion = () => {
     }
   };
 
-  useEffect(() => {
-    obtenerProvincias();
-  }, []);
-
-  useEffect(() => {
-    if (provinciaSeleccionada !== '') {
-      obtenerCantones(provinciaSeleccionada);
-    }
-  }, [provinciaSeleccionada]);
-
-  useEffect(() => {
-    if (cantonSeleccionado !== '') {
-      obtenerDistritos(provinciaSeleccionada, cantonSeleccionado);
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [cantonSeleccionado]);
-
-  const obtenerProvincias = () => {
-    fetch('https://ubicaciones.paginasweb.cr/provincias.json')
-      .then(response => response.json())
-      .then(data => {
-        const provinciasArray = Object.entries(data).map(([key, value]) => ({ id: key, nombre: value }));
-        setProvincias(provinciasArray);
-      })
-      .catch(error => {
-        console.error('Error al obtener las provincias:', error);
-      });
-  };
-
-  const obtenerCantones = (provinciaId) => {
-    fetch(`https://ubicaciones.paginasweb.cr/provincia/${provinciaId}/cantones.json`)
-      .then(response => response.json())
-      .then(data => {
-        const cantonesArray = Object.entries(data).map(([key, value]) => ({ id: key, nombre: value }));
-        setCantones(cantonesArray);
-      })
-      .catch(error => {
-        console.error('Error al obtener los cantones:', error);
-      });
-  };
-
-  const obtenerDistritos = (provinciaId, cantonId) => {
-    fetch(`https://ubicaciones.paginasweb.cr/provincia/${provinciaId}/canton/${cantonId}/distritos.json`)
-      .then(response => response.json())
-      .then(data => {
-        const distritosArray = Object.entries(data).map(([key, value]) => ({ id: key, nombre: value }));
-        setDistritos(distritosArray);
-      })
-      .catch(error => {
-        console.error('Error al obtener los distritos:', error);
-      });
-  };
-
-  const handleProvinciaChange = (event) => {
-    const selectedProvincia = event.target.value;
-    setProvinciaSeleccionada(selectedProvincia);
-    setCantonSeleccionado('');
-  };
-
-  const handleCantonChange = (event) => {
-    const selectedCanton = event.target.value;
-    setCantonSeleccionado(selectedCanton);
-    setDistritoSeleccionado('');
-  };
-
-  const handleDistritoChange = (event) => {
-    const selectedDistrito = event.target.value;
-    setDistritoSeleccionado(selectedDistrito);
+  const handleEdificioChange = (event) => {
+    const selectedEdificio = event.target.value;
+    setEdificioSeleccionado(selectedEdificio);
   };
 
   return (
     <IngresarDireccionView
-    provincias={provincias}
     handleContinuar={handleContinuar}
     navigate={navigate}
-    obtenerProvincias={obtenerProvincias}
-    handleProvinciaChange={handleProvinciaChange}
-    provinciaSeleccionada={provinciaSeleccionada}
-    cantones={cantones}
-    handleCantonChange={handleCantonChange}
-    cantonSeleccionado={cantonSeleccionado}
-    handleDistritoChange={handleDistritoChange}
-    distritos={distritos}
-    distritoSeleccionado={distritoSeleccionado}
+    handleEdificioChange={handleEdificioChange}
+    edificioSeleccionado={edificioSeleccionado}
+    telefono={telefono}
+    aula={aula}
     detalles={detalles}
     setDetalles={setDetalles}
+    setTelefono={setTelefono}
+    setAula={setAula}
     email={email}
 
     />
@@ -759,34 +687,13 @@ const FinalizarCompra = () => {
   const email = location.state && location.state.correo;
   const [image, setImage] = useState(null);
   const [totalCompra, setTotalCompra] = useState(0);
-  const [provincia, setProvincia] = useState('');
+  const [edificio, setEdificio] = useState('');
   const [selectedImageURL, setSelectedImageURL] = useState(null);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-  const calcularMontoAdicional = (provincia) => {
-    switch (provincia) {
-      case 'San José':
-        return 5;
-      case 'Alajuela':
-        return 10;
-      case 'Cartago':
-        return 15;
-      case 'Heredia':
-        return 20;
-      case 'Guanacaste':
-        return 25;
-      case 'Puntarenas':
-        return 30;
-      case 'Limón':
-        return 35;
-      default:
-        return 0;
-    }
-  };
-
   useEffect(() => {
     if (email) {
-      // Tu lógica para calcular el total de la compra y la provincia aquí
+      // Tu lógica para calcular el total de la compra y la edificio aquí
       const carritoCollection = collection(db, 'carrito');
       const q = query(carritoCollection, where('correo', '==', email));
       getDocs(q)
@@ -801,14 +708,13 @@ const FinalizarCompra = () => {
           getDocs(direccionQuery)
             .then((direccionSnapshot) => {
               direccionSnapshot.forEach((direccionDoc) => {
-                const provincia = direccionDoc.data().provincia;
-                const montoAdicional = calcularMontoAdicional(provincia);
-                setTotalCompra(total + montoAdicional);
-                setProvincia(provincia);
+                const edificio = direccionDoc.data().edificio;
+                setTotalCompra(total);
+                setEdificio(edificio);
               });
             })
             .catch((error) => {
-              console.error('Error obteniendo la provincia:', error);
+              console.error('Error obteniendo la edificio:', error);
             });
         })
         .catch((error) => {
@@ -879,7 +785,7 @@ const FinalizarCompra = () => {
             comprobante: imageURL,
             email: email,
             totalCompra: totalCompra,
-            direccionEntrega: provincia,
+            direccionEntrega: edificio,
             fechaEmision: fechaEmision,
             fechaEntrega: fechaEntrega,
             estado: "pendiente",
@@ -935,7 +841,6 @@ const FinalizarCompra = () => {
         handleContinuar={handleContinuar}
         handleImageChange={handleImageChange}
         totalCompra={totalCompra}
-        provincia={provincia}
         selectedImageURL={selectedImageURL}
         Modal={Modal}
         showSuccessModal={showSuccessModal}

@@ -9,7 +9,6 @@ const FinalizarCompraView = (props) => {
     handleImageChange,
     totalCompra,
     selectedImageURL,
-    provincia,
     Modal,
     showSuccessModal,
     setShowSuccessModal,

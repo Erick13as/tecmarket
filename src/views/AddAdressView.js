@@ -1,20 +1,16 @@
 function IngresarDireccionView(props) {
     const {
-        provincias,
         handleContinuar,
         navigate,
-        obtenerProvincias,
-        handleProvinciaChange,
-        provinciaSeleccionada,
-        cantones,
-        handleCantonChange,
-        cantonSeleccionado,
-        handleDistritoChange,
-        distritos,
-        distritoSeleccionado,
+        handleEdificioChange,
+        edificioSeleccionado,
+        telefono,
+        aula,
         detalles,
         setDetalles,
         email,
+        setTelefono,
+        setAula
 
     } = props;
 
@@ -30,48 +26,66 @@ function IngresarDireccionView(props) {
             </form>
 
             <form className='formCCC'>
-                <h1 className="titleImagen">Detalles de Compra</h1>
                 <div className='centrar'>
                     <h3 className='text'>Dirección de Envío</h3>
+
+                    <h4 className='text'>Número de Teléfono:</h4>
+                    <div>
+                        <textarea
+                            className="textBox4 textarea-detalles"
+                            id="telefono"
+                            value={telefono}
+                            onChange={(e) => setTelefono(e.target.value)}
+                            placeholder="Ingrese el número."
+                        ></textarea>
+                    </div>
                     
                     <div className='select-container'>
                     <label htmlFor='categorySelect'></label>
                     </div>
-                    <h4 className='text'>Seleccione la Provincia:</h4>
+                    <h4 className='text'>Seleccione el edificio:</h4>
                     <div>
-                        <select onChange={handleProvinciaChange} value={provinciaSeleccionada} >
-                        <option value="">Seleccione una Provincia</option>
-                            {provincias.map(provincia => (
-                                <option key={provincia.id} value={provincia.id}>
-                                    {provincia.nombre}
-                                </option>
-                            ))}
+                        <select onChange={handleEdificioChange} value={edificioSeleccionado} >
+                        <option value="">Seleccione un edificio.</option>
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="A3">A3</option>
+                        <option value="A4">A4</option>
+                        <option value="A5">A5</option>
+                        <option value="A6">A6</option>
+                        <option value="A7">A7</option>
+                        <option value="A8">A8</option>
+                        <option value="A9">A9</option>
+                        <option value="A10">A10</option>
+                        <option value="A11">A11</option>
+                        <option value="A12">A12</option>
+                        <option value="A13">A13</option>
+
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+                        <option value="A1">A1</option>
+
                         </select>
 
                     </div>
-                    
-                    <h4 className='text'>Seleccione el Cantón:</h4>
-                    <div>
-                        <select onChange={handleCantonChange} value={cantonSeleccionado} >
-                            <option value="">Seleccione un cantón</option>
-                            {cantones.map(canton => (
-                                <option key={canton.id} value={canton.id}>
-                                    {canton.nombre}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
 
-                    <h4 className='text'>Seleccione el Distrito:</h4>
+                    <h4 className='text'>Número de Aula:</h4>
                     <div>
-                        <select onChange={handleDistritoChange} value={distritoSeleccionado}>
-                            <option value="">Seleccione un distrito</option>
-                            {distritos.map(distrito => (
-                                <option key={distrito.id} value={distrito.id}>
-                                    {distrito.nombre}
-                                </option>
-                            ))}
-                        </select>
+                        <textarea
+                            className="textBox4 textarea-detalles"
+                            id="aula"
+                            value={aula}
+                            onChange={(e) => setAula(e.target.value)}
+                            placeholder="Ingrese el # aula."
+                        ></textarea>
                     </div>
 
                     <h4 className='text'>Detalles adicionales:</h4>
