@@ -40,17 +40,9 @@ function AccederTiendaClienteView(props) {
   return (
     <div className="main_page-container">
       <form className="formBarra">
-        <button onClick={() => navigate('/galeriaCliente', { state: { correo: email } })} className='botonOA'>Galería</button>
+      <h1 className="title">TecMarket</h1>
         <div className="botonBarra-container">
-          <button
-            onClick={() => navigate(`/Notificaciones/${"C"+userId}`, { state: { correo: email } })}
-            className={`botonOA2 ${hasUnreadNotifications ? 'unread-notifications' : ''}`}
-          >
-            {hasUnreadNotifications ? (
-              <span className="notification-flag"></span>
-            ) : null}
-            Notificaciones
-          </button>
+          
           <button onClick={() => navigate(`/ComprasRealizadas/${"C"+userId}`, { state: { correo: email } })} className='botonOA2'>Ordenes</button>
           <button onClick={navigateToCarrito} className='botonOA2'>Mi Carrito</button>
           <button onClick={() => navigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
@@ -66,7 +58,7 @@ function AccederTiendaClienteView(props) {
               </div>
               <div className="details-container">
                 <h3 className="titleAccederTienda">{product.nombre}</h3>
-                <p className="precio"> ${product.precio}</p>
+                <p className="precio"> ₡{product.precio}</p>
                 <button className="botonImagen2" onClick={() => navigate('/VerMasCliente', { state: { correo: email, producto: product.id } })}>
                   Ver detalles
                 </button>

@@ -61,14 +61,14 @@ return (
                     </button>
                     </div>
                 </td>
-                <td>{product ? `$${product.precio}` : 'N/A'}</td>
+                <td>{product ? `₡${product.precio}` : 'N/A'}</td>
                 </tr>
             );
             })}
         </tbody>
         </table>
         <div className="carrito-total" style={{ marginTop: '20px' }}>
-        Total: ${total}
+        Total: ₡{total}
         </div>
         <button onClick={finalizarCompra} className="botonOA">
         Finalizar Compra

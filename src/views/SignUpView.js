@@ -18,9 +18,7 @@ function SignInView(props) {
     return (
         <div className="galeria-container">
           <form className="formBarra">
-            <div className="botonBarra-container">
-              <button onClick={navigateToGallery} className='botonOA2'>Galería</button>
-            </div>
+          <h1 className="title">TecMarket</h1>
           </form>
           <div className="sign_up-container">
             <form onSubmit={signUp} className="formSignUp">

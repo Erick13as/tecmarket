@@ -243,6 +243,7 @@ function EditarProductoAdmin() {
 
 function VerMasCliente() {
   const location = useLocation();
+  const [userId, setUserId] = useState(null);
   const email = location.state && location.state.correo;
   const id = location.state && location.state.producto;
   const [productos, setProductos] = useState([]);
@@ -254,7 +255,25 @@ function VerMasCliente() {
   const handleNavigate = (route) => {
     navigate(route);
   };
+  
+
   useEffect(() => {
+    const obtenerIdUsuario = async () => {
+      const usuarioQuery = query(collection(db, 'usuario'), where('correo', '==', email));
+      const usuarioSnapshot = await getDocs(usuarioQuery);
+
+      if (!usuarioSnapshot.empty) {
+        usuarioSnapshot.forEach((doc) => {
+          // Obtén el valor del atributo 'id' del documento de usuario
+          const data = doc.data();
+          const idUsuario = data.id;
+          setUserId(idUsuario);
+        });
+      }
+    };
+
+    obtenerIdUsuario();
+
     const q = collection(db, 'productos');
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
@@ -366,6 +385,7 @@ function VerMasCliente() {
         handleNavigate={handleNavigate}
         navigate={navigate}
         email={email}
+        userId={userId}
     />
   );
 }

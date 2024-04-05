@@ -8,6 +8,7 @@ function VerMasClienteView(props) {
         handleNavigate,
         navigate,
         email,
+        userId,
     } = props;
     
     return (
@@ -15,7 +16,7 @@ function VerMasClienteView(props) {
         <form className="formBarra">
             <button onClick={() => navigate('/AccederTiendaCliente', { state: { correo: email } })} className='botonOA'>Tienda</button>
             <div className="botonBarra-container">
-                <button onClick={() => handleNavigate('/')} className='botonOA2'>Ordenes</button>
+            <button onClick={() => navigate(`/ComprasRealizadas/${"C"+userId}`, { state: { correo: email } })} className='botonOA2'>Ordenes</button>
                 <button onClick={() => navigate('/Carrito', { state: { correo: email } })} className='botonOA2'>Mi Carrito</button>
             </div>
         </form>
