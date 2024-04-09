@@ -38,7 +38,7 @@ function VerMasClienteView(props) {
             <div className="product-info">
             <h1>Detalles del Producto</h1>
             <h2>Nombre del Producto: {product.nombre}</h2>
-            <p>Precio: {product.precio}</p>
+            <p>Precio: ₡{product.precio}</p>
             <p>Descripción: {product.descripcion}</p>
             <p>Cantidad: {product.cantidad}</p>
             <p>Marca: {product.marca}</p>

@@ -31,7 +31,7 @@ const FinalizarCompraView = (props) => {
           <h4 className='textP'>Realiza el pago por SinpeMóvil por el monto del total con envío para finalizar la compra.</h4>
           <form className="formTotal">
             <p className="textPP">Total</p>
-            <p>$ {totalCompra}</p>
+            <p>₡ {totalCompra}</p>
           </form>
 
           <div className="espaciado"></div>

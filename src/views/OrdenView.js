@@ -35,7 +35,7 @@ return (
                   <td className="table-cell"><img src={producto.imagen} alt={producto.nombre} /></td>
                   <td className="table-cell">{producto.nombre}</td>
                   <td className="table-cell">{producto.cantidad}</td>
-                  <td className="table-cell">{producto.precio}</td>
+                  <td className="table-cell">₡{producto.precio}</td>
                 </tr>
               ))}
             </tbody>
@@ -43,7 +43,7 @@ return (
           
           <h2>Dirección de entrega: {orden.direccionEntrega}</h2>
           <h2>Estado: {orden.estado}</h2>
-          <h2>Total + envío: {total}</h2>
+          <h2>Total + envío: ₡{total}</h2>
           
         </div>
       )}
