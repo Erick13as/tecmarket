@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/tecmarket/static/css/main.989fa951.css",
-    "main.js": "/tecmarket/static/js/main.f38e5ed0.js",
+    "main.js": "/tecmarket/static/js/main.6380e0d9.js",
     "static/media/slick.svg": "/tecmarket/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/tecmarket/static/media/slick.a4e97f5a2a64f0ab1323.eot",
     "static/media/slick.ttf": "/tecmarket/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/tecmarket/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/tecmarket/index.html",
     "main.989fa951.css.map": "/tecmarket/static/css/main.989fa951.css.map",
-    "main.f38e5ed0.js.map": "/tecmarket/static/js/main.f38e5ed0.js.map"
+    "main.6380e0d9.js.map": "/tecmarket/static/js/main.6380e0d9.js.map"
   },
   "entrypoints": [
     "static/css/main.989fa951.css",
-    "static/js/main.f38e5ed0.js"
+    "static/js/main.6380e0d9.js"
   ]
 }
