@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, serverTimestamp, query, getDocs, doc, updateDoc, where, deleteDoc, getDoc } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase/firebaseConfig';
+import { db, storage, analytics, logEvent  } from '../firebase/firebaseConfig';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import Modal from 'react-modal'; // Importa react-modal
 import CerrarCompraView from '../views/CerrarCompraView';
@@ -813,6 +813,11 @@ const FinalizarCompra = () => {
           }
           
           // Aquí puedes realizar otras acciones relacionadas con la factura si es necesario.
+          logEvent(analytics, 'finalizar_compra', {
+            orden_id: uniqueNumeroOrden,
+            price: parseFloat(totalCompra), 
+            currency: 'CRC' 
+          });
           setShowSuccessModal(true);
         } else {
           console.error('No se encontró un carrito para el usuario actual.');
