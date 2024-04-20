@@ -25,7 +25,7 @@ function OrdenesPendientesView(props) {
             <p>ID del Cliente: {orden.idCliente}</p>
             {/* Utiliza Link para enlazar a la página de detalles de la orden */}
             
-            <button className="botonImagen2" onClick={() => handleNavigate(`/CerrarCompra/${orden.id}`)}>
+            <button className="botonImagen2" onClick={() => handleNavigate(`/OrdenAdmin/${orden.numeroOrden}`)}>
                 Seleccionar Orden
             </button>
           </li>

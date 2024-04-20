@@ -342,6 +342,7 @@ function DetallesOrdenAdmin() {
   const navigate = useNavigate();
   const location = useLocation();
   const email = location.state && location.state.correo;
+  const [ordenId, setOrdenId] = useState(null);
 
   const handleNavigate = (route) => {
     navigate(route);
@@ -355,7 +356,9 @@ function DetallesOrdenAdmin() {
         if (ordenSnapshot.size === 1) {
           const ordenDoc = ordenSnapshot.docs[0];
           const ordenData = ordenDoc.data();
+          const ordenId = ordenDoc.id;
           setOrden(ordenData);
+          setOrdenId(ordenId);
           const productosData = ordenData.ListaProductos;
           setProductos(productosData);
 
@@ -408,6 +411,9 @@ function DetallesOrdenAdmin() {
     orden={orden}
     productos={productos}
     total={total}
+    email={email}
+    handleNavigate={handleNavigate}
+    ordenId={ordenId}
     />
   );
 }
