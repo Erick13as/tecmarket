@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { collection, addDoc, serverTimestamp, query, orderBy, limit, getDocs, onSnapshot, doc, updateDoc, where, deleteDoc, arrayUnion } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../firebase/firebaseConfig';
+import { db, storage, analytics, logEvent } from '../firebase/firebaseConfig';
 import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -363,6 +363,13 @@ function VerMasCliente() {
           console.error('Error al agregar el producto al carrito en la base de datos', error);
         }
       }
+
+      logEvent(analytics, 'add_to_cart', {
+        item_id: id,
+        item_name: productData.nombre,
+        price: parseFloat(productData.precio), 
+        currency: 'CRC' 
+      });
     }
   };  
 
