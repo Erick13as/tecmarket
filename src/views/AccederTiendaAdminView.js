@@ -10,9 +10,7 @@ function AccederTiendaAdminView(props) {
   return (
     <div className="main_page-container">
       <form className="formBarra">
-        <button onClick={()=>handleNavigate('/galeriaAdmin')} className='botonOA'>Galería</button>
-        <span className="button-space"></span>
-        <button onClick={()=>handleNavigate('/agenda')} className='botonOA'>Agenda</button>
+        <h1 className="title">TecMarket</h1>
         <div className="botonBarra-container"></div>
         <div className="botonBarra-container">
             <button onClick={() => handleNavigate('/OrdenesPendientes')} className='botonOA2'>Gestión Ordenes</button>
@@ -31,7 +29,7 @@ function AccederTiendaAdminView(props) {
               </div>
               <div className="details-container">
                 <h3 className="titleAccederTienda">{product.nombre}</h3>
-                <p className="precio"> ${product.precio}</p>
+                <p className="precio"> ₡{product.precio}</p>
                 <button className="botonImagen2" onClick={() => handleNavigate(`/EditarProductoAdmin/${product.id}`)}>
                   Editar Producto
                 </button>

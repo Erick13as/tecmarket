@@ -45,12 +45,14 @@ function AgregarProducto() {
     setUploading(true);
 
     try {
-      // Obtén el número de producto más alto actual
-      const productQuery = query(collection(db, 'productos'), orderBy('id', 'desc'), limit(1));
-      const productSnapshot = await getDocs(productQuery);
-      const latestProduct = productSnapshot.docs[0];
-      const latestProductId = latestProduct ? latestProduct.data().id : 0;
-      const newProductId = parseInt(latestProductId) + 1;
+      // Se obtiene el número de producto más alto actual
+      const querySnapshot = await getDocs(collection(db, 'productos'));
+      const ids = [];
+      querySnapshot.forEach(doc => {
+        const id = parseInt(doc.id);
+        ids.push(id);
+      });
+      const newProductId = ids.length + 1;
 
       const storageRef = ref(storage, `imagen/${productImage.name}`);
       await uploadBytes(storageRef, productImage);
@@ -59,7 +61,7 @@ function AgregarProducto() {
 
       const productData = {
         id: newProductId.toString(), // Asigna el nuevo id
-        nombre: productName,
+        nombre:productName,
         marca: productBrand,
         descripcion: productDescription,
         precio: productPrice,

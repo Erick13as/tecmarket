@@ -116,7 +116,7 @@ function EditarProductoAdmin(props) {
             ) : (
               <div>
                 <h2>Nombre del Producto: {product.nombre}</h2>
-                <p>Precio: {product.precio}</p>
+                <p>Precio: ₡{product.precio}</p>
                 <p>Descripción: {product.descripcion}</p>
                 <p>Cantidad: {product.cantidad}</p>
                 <p>Marca: {product.marca}</p>
