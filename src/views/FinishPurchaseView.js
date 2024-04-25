@@ -28,7 +28,7 @@ const FinalizarCompraView = (props) => {
         <h1 className="titleImagen">Detalles de Compra</h1>
         <div className='centrar'>
           <h3 className='text'>Comprobante de Pago</h3>
-          <h4 className='textP'>Realiza el pago por SinpeMóvil por el monto del total con envío para finalizar la compra.</h4>
+          <h4 className='textP'>Realiza el pago por SinpeMóvil por el monto del total para finalizar la compra.</h4>
           <form className="formTotal">
             <p className="textPP">Total</p>
             <p>₡ {totalCompra}</p>

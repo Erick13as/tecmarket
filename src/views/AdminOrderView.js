@@ -14,7 +14,7 @@ function DetallesOrdenAdminView(props) {
 return (
     <div className="compra-container">
       <form className="formBarra">
-        <button onClick={()=>navigate('/AccederTiendaCliente', { state: { correo: email } })} className='botonOA'>Tienda</button>
+        <button onClick={()=>navigate('/AccederTiendaAdmin')} className='botonOA'>Tienda</button>
         <div className="botonBarra-container">
             <button onClick={() => navigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
         </div>
@@ -45,7 +45,7 @@ return (
           
           <h2>Dirección de entrega: {orden.direccionEntrega}</h2>
           <h2>Estado: {orden.estado}</h2>
-          <h2>Total + envío: ₡{total}</h2>
+          <h2>Total: ₡{total}</h2>
 
           <div className="centered-container">
           <button onClick={()=>handleNavigate(`/CerrarCompra/${ordenId}`)} className='botonOA'>Gestionar orden</button>
