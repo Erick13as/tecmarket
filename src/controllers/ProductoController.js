@@ -73,6 +73,7 @@ function AgregarProducto() {
       await addDoc(collection(db, 'productos'), productData);
 
       console.log('Producto subido con éxito. Nuevo ID del producto:', newProductId);
+      // Cambiar
       window.location.href = '/AccederTiendaAdmin';
     } catch (error) {
       console.error('Error al subir el producto:', error);

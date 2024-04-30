@@ -44,6 +44,7 @@ function CerrarCompra() {
       });
       console.log('Orden rechazada con éxito');
       // Redirige a la página OrdenesPendientes
+      // Cambiar
       window.location.href = '/OrdenesPendientes';
     } catch (error) {
       console.error('Error al rechazar la orden:', error);
@@ -110,6 +111,7 @@ function CerrarCompra() {
 
       console.log('Orden confirmada con éxito');
       // Redirige a la página OrdenesPendientes
+      // Cambiar
       window.location.href = '/OrdenesPendientes';
     } catch (error) {
       console.error('Error al confirmar la orden:', error);
