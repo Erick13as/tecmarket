@@ -5,7 +5,7 @@ import "./components/Design.css"
 
 import { SignIn, SignUp } from './controllers/UserController';
 import { AgregarProducto,EditarProductoAdmin,VerMasCliente,AccederTiendaCliente,AccederTiendaAdmin} from './controllers/ProductoController';
-import { CerrarCompra, OrdenesPendientes, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin} from './controllers/CompraController';
+import { CerrarCompra, OrdenesPendientes,OrdenesEntregadas,OrdenesConfirmadas, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin} from './controllers/CompraController';
 import { Notificaciones } from './controllers/NotificacionController';
 
 import "./components/Design.css"
@@ -26,6 +26,8 @@ const App = () => {
         <Route path='/VerMasCliente' element={<VerMasCliente />}  />
         <Route path='/EditarProductoAdmin/:id' element={<EditarProductoAdmin />}  />
         <Route path='/OrdenesPendientes' element={<OrdenesPendientes />}  />
+        <Route path='/OrdenesConfirmadas' element={<OrdenesConfirmadas />}  />
+        <Route path='/OrdenesEntregadas' element={<OrdenesEntregadas />}  />
         <Route path='/CerrarCompra/:id'element={<CerrarCompra />}  />
         <Route path='/ingresarDireccion' element={<IngresarDireccion />} />
         <Route path='/ComprasRealizadas/:userId'element={<ListaOrdenes />}  />

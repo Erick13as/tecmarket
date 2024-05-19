@@ -6,6 +6,8 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import Modal from 'react-modal'; // Importa react-modal
 import CerrarCompraView from '../views/CerrarCompraView';
 import OrdenesPendientesView from '../views/OrdenesPendientesView';
+import OrdenesConfirmadasView from '../views/OrdenesConfirmadasView';
+import OrdenesEntregadasView from '../views/OrdenesEntregadasView';
 import ListaOrdenesView from '../views/ComprasRealizadasView';
 import DetallesOrdenView from '../views/OrdenView';
 import IngresarDireccionView from '../views/AddAdressView';
@@ -206,6 +208,87 @@ function OrdenesPendientes() {
         handleNavigate={handleNavigate}
     />
     );
+}
+function OrdenesConfirmadas() {
+  const [ordenes, setOrdenes] = useState([]);
+  const [selectedOrden, setSelectedOrden] = useState(null);
+  const navigate = useNavigate();
+  const handleNavigate = (route) => {
+      navigate(route);
+  };
+  useEffect(() => {
+    // Consulta Firestore para obtener órdenes con estado "pendiente"
+    const q = query(collection(db, 'orden'), where('estado', '==', 'confirmada'));
+
+    getDocs(q)
+      .then((querySnapshot) => {
+        const ordenesData = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          ordenesData.push({
+            id: doc.id,
+            numeroOrden: data.numeroOrden,
+            fechaEmision: data.fechaEmision.toDate().toLocaleDateString(),
+            idCliente: data.idCliente,
+          });
+        });
+        setOrdenes(ordenesData);
+      })
+      .catch((error) => {
+        console.error('Error al obtener las órdenes:', error);
+      });
+  }, []);
+
+  return (
+      <OrdenesConfirmadasView
+      ordenes={ordenes}
+      setOrdenes={setOrdenes}
+      selectedOrden={selectedOrden}
+      setSelectedOrden={setSelectedOrden}
+      handleNavigate={handleNavigate}
+  />
+  );
+}
+
+function OrdenesEntregadas() {
+  const [ordenes, setOrdenes] = useState([]);
+  const [selectedOrden, setSelectedOrden] = useState(null);
+  const navigate = useNavigate();
+  const handleNavigate = (route) => {
+      navigate(route);
+  };
+  useEffect(() => {
+    // Consulta Firestore para obtener órdenes con estado "entregadas"
+    const q = query(collection(db, 'orden'), where('estado', '==', 'entregada'));
+
+    getDocs(q)
+      .then((querySnapshot) => {
+        const ordenesData = [];
+        querySnapshot.forEach((doc) => {
+          const data = doc.data();
+          ordenesData.push({
+            id: doc.id,
+            numeroOrden: data.numeroOrden,
+            fechaEmision: data.fechaEmision.toDate().toLocaleDateString(),
+            idCliente: data.idCliente,
+          });
+        });
+        setOrdenes(ordenesData);
+      })
+      .catch((error) => {
+        console.error('Error al obtener las órdenes:', error);
+      });
+  }, []);
+
+  return (
+      <OrdenesEntregadasView
+      ordenes={ordenes}
+      setOrdenes={setOrdenes}
+      selectedOrden={selectedOrden}
+      setSelectedOrden={setSelectedOrden}
+      handleNavigate={handleNavigate}
+  />
+  );
 }
   
   function ListaOrdenes() {
@@ -864,4 +947,4 @@ const FinalizarCompra = () => {
   );
 };
   
-export {CerrarCompra,OrdenesPendientes,ListaOrdenes,DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin};
+export {CerrarCompra,OrdenesPendientes,OrdenesEntregadas,ListaOrdenes,DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,OrdenesConfirmadas};
