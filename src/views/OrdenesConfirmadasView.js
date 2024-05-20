@@ -25,7 +25,7 @@ function OrdenesConfirmadasView(props) {
             <p>ID del Cliente: {orden.idCliente}</p>
             {/* Utiliza Link para enlazar a la página de detalles de la orden */}
             
-            <button className="botonImagen2" onClick={() => handleNavigate(`/OrdenAdmin/${orden.numeroOrden}`)}>
+            <button className="botonImagen2" onClick={() => handleNavigate(`/OrdenDelivery/${orden.numeroOrden}`)}>
                 Seleccionar Orden
             </button>
           </li>
