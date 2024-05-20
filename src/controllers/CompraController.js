@@ -16,6 +16,7 @@ import FinalizarCompraView from '../views/FinishPurchaseView';
 import DetallesOrdenAdminView from '../views/AdminOrderView';
 import { getMessaging, getToken } from 'firebase/messaging';
 import { addDays, setDay, isBefore } from 'date-fns';
+import DeliveryMenuView from '../views/DeliveryMenu';
 
 Modal.setAppElement('#root');
 
@@ -246,6 +247,18 @@ function OrdenesConfirmadas() {
       selectedOrden={selectedOrden}
       setSelectedOrden={setSelectedOrden}
       handleNavigate={handleNavigate}
+  />
+  );
+}
+
+function DeliveryMenu() {
+  const navigate = useNavigate();
+  const handleNavigate = (route) => {
+    navigate(route);
+  };
+  return (
+    <DeliveryMenuView
+    handleNavigate={handleNavigate}
   />
   );
 }
@@ -766,7 +779,6 @@ function Carrito() {
     total={total}
     finalizarCompra={handlefinalizarCompra}
     handleQuantityChange={handleQuantityChange}
-
     />
   );
 }
@@ -947,4 +959,4 @@ const FinalizarCompra = () => {
   );
 };
   
-export {CerrarCompra,OrdenesPendientes,OrdenesEntregadas,ListaOrdenes,DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,OrdenesConfirmadas};
+export {CerrarCompra,OrdenesPendientes,OrdenesEntregadas,ListaOrdenes,DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,OrdenesConfirmadas,DeliveryMenu};
