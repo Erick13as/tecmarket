@@ -25,9 +25,9 @@ const SignIn = () => {
             // Check the value of rolValue and navigate accordingly
             if (rolValue === 'Admin') {
               navigate('/AccederTiendaAdmin');
-            } /*else if (rolValue === 'Repartidor') {
-              navigate('/AccederTiendaCliente', { state: { correo: email } });
-            }*/ else {
+            } else if (rolValue === 'Repartidor') {
+              navigate('/DeliveryMenu');
+            } else {
               navigate('/AccederTiendaCliente', { state: { correo: email } });
             }
           });

@@ -11,7 +11,7 @@ function OrdenesConfirmadasView(props) {
     return (
         <div className="pendientes-container">
       <form className="formBarra">
-        <button onClick={()=>handleNavigate('/AccederTiendaAdmin')} className='botonOA'>Tienda</button>
+        <button onClick={()=>handleNavigate('/DeliveryMenu')} className='botonOA'>Inicio</button>
         <div className="botonBarra-container">
             <button onClick={() => handleNavigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
         </div>
