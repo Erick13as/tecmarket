@@ -74,7 +74,7 @@ function AgregarProducto() {
 
       console.log('Producto subido con éxito. Nuevo ID del producto:', newProductId);
       // Cambiar
-      window.location.href = '/AccederTiendaAdmin';
+      navigate('/AccederTiendaAdmin');
     } catch (error) {
       console.error('Error al subir el producto:', error);
       setErrorText('Hubo un error al subir el producto. Por favor, inténtelo nuevamente.');
