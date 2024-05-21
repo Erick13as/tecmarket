@@ -37,7 +37,7 @@ const App = () => {
         <Route path='/Notificaciones/:id'element={<Notificaciones />} />
         <Route path='/DeliveryMenu'element={<DeliveryMenu />} />
         <Route path='/OrdenDelivery/:numeroOrden'element={<DetallesOrdenDelivery />} />
-        <Route path='/Map'element={<MyMapComponent />} />
+        <Route path='/Map/:numeroOrden'element={<MyMapComponent />} />
       </Routes>
     </div>
     </BrowserRouter>
