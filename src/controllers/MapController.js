@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { db } from '../firebase/firebaseConfig';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import 'leaflet/dist/leaflet.css';
 
 // Opcional: solucionar problemas de iconos con Webpack
@@ -18,6 +18,7 @@ const MyMapComponent = () => {
   const [direccionEntrega, setDireccionEntrega] = useState('');
   const [direccionEntregaPoint, setDireccionEntregaPoint] = useState(null);
   const { numeroOrden } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchDireccionEntrega = async () => {
@@ -50,17 +51,25 @@ const MyMapComponent = () => {
   ];
 
   return (
-    <MapContainer center={[9.85381101662751, -83.91039810196884]} zoom={17} style={{ height: '100vh', width: '100%' }}>
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      />
-      {direccionEntregaPoint && (
-        <Marker position={[direccionEntregaPoint.lat, direccionEntregaPoint.lng]}>
-          <Popup>{direccionEntregaPoint.text}</Popup>
-        </Marker>
-      )}
-    </MapContainer>
+    <div className="compra-container">
+      <form className="formBarra">
+        <button onClick={()=>navigate('/DeliveryMenu')} className='botonOA'>Inicio</button>
+        <div className="botonBarra-container">
+            <button onClick={() => navigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
+        </div>
+      </form>
+      <MapContainer center={[9.85381101662751, -83.91039810196884]} zoom={17} style={{ height: '80vh', width: '100%' }}>
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {direccionEntregaPoint && (
+          <Marker position={[direccionEntregaPoint.lat, direccionEntregaPoint.lng]}>
+            <Popup>{direccionEntregaPoint.text}</Popup>
+          </Marker>
+        )}
+      </MapContainer>
+    </div>
   );
 };
 
