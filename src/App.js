@@ -7,7 +7,7 @@ import { SignIn, SignUp } from './controllers/UserController';
 import { AgregarProducto,EditarProductoAdmin,VerMasCliente,AccederTiendaCliente,AccederTiendaAdmin} from './controllers/ProductoController';
 import { CerrarCompra, OrdenesPendientes,OrdenesEntregadas,OrdenesConfirmadas, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,DeliveryMenu,DetallesOrdenDelivery,DetallesOrdenDelivered} from './controllers/CompraController';
 import { Notificaciones } from './controllers/NotificacionController';
-import { MyMapComponent } from './controllers/MapController';
+import { MapaDelivery, MapaDelivered } from './controllers/MapController';
 import { PruebaMapa } from './controllers/PruebaMap';
 
 import "./components/Design.css"
@@ -38,7 +38,8 @@ const App = () => {
         <Route path='/Notificaciones/:id'element={<Notificaciones />} />
         <Route path='/DeliveryMenu'element={<DeliveryMenu />} />
         <Route path='/OrdenDelivery/:numeroOrden'element={<DetallesOrdenDelivery />} />
-        <Route path='/Map/:numeroOrden'element={<MyMapComponent />} />
+        <Route path='/MapDy/:numeroOrden'element={<MapaDelivery />} />
+        <Route path='/MapDd/:numeroOrden'element={<MapaDelivered />} />
         <Route path='/MapaP/'element={<PruebaMapa />} />
         <Route path='/OrdenDelivered/:numeroOrden'element={<DetallesOrdenDelivered />} />
       </Routes>

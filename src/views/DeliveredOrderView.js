@@ -48,7 +48,7 @@ return (
           <h2>Total: ₡{total}</h2>
 
           <div className="centered-container">
-          <button onClick={() => navigate(`/Map/${orden.numeroOrden}`)} className='botonOA'>Ver ubicación</button>
+          <button onClick={() => navigate(`/MapDd/${orden.numeroOrden}`)} className='botonOA'>Ver ubicación</button>
           </div>
           
         </div>

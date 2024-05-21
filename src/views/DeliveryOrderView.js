@@ -49,7 +49,7 @@ return (
           <h2>Total: ₡{total}</h2>
 
           <div className="centered-container">
-          <button onClick={() => navigate(`/Map/${orden.numeroOrden}`)} className='botonOA'>Ver ubicación</button>
+          <button onClick={() => navigate(`/MapDy/${orden.numeroOrden}`)} className='botonOA'>Ver ubicación</button>
           <button onClick={entregarOrden} className='botonOA'>Marcar Completado</button>
           </div>
           
