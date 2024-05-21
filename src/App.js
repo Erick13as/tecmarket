@@ -5,7 +5,7 @@ import "./components/Design.css"
 
 import { SignIn, SignUp } from './controllers/UserController';
 import { AgregarProducto,EditarProductoAdmin,VerMasCliente,AccederTiendaCliente,AccederTiendaAdmin} from './controllers/ProductoController';
-import { CerrarCompra, OrdenesPendientes,OrdenesEntregadas,OrdenesConfirmadas, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,DeliveryMenu,DetallesOrdenDelivery} from './controllers/CompraController';
+import { CerrarCompra, OrdenesPendientes,OrdenesEntregadas,OrdenesConfirmadas, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,DeliveryMenu,DetallesOrdenDelivery,DetallesOrdenDelivered} from './controllers/CompraController';
 import { Notificaciones } from './controllers/NotificacionController';
 import { MyMapComponent } from './controllers/MapController';
 
@@ -38,6 +38,7 @@ const App = () => {
         <Route path='/DeliveryMenu'element={<DeliveryMenu />} />
         <Route path='/OrdenDelivery/:numeroOrden'element={<DetallesOrdenDelivery />} />
         <Route path='/Map/:numeroOrden'element={<MyMapComponent />} />
+        <Route path='/OrdenDelivered/:numeroOrden'element={<DetallesOrdenDelivered />} />
       </Routes>
     </div>
     </BrowserRouter>
