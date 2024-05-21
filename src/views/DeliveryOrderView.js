@@ -48,7 +48,7 @@ return (
           <h2>Estado: {orden.estado}</h2>
           <h2>Total: ₡{total}</h2>
 
-          <div className="centered-container">
+          <div className="botones-container">
           <button onClick={() => navigate(`/MapDy/${orden.numeroOrden}`)} className='botonOA'>Ver ubicación</button>
           <button onClick={entregarOrden} className='botonOA'>Marcar Completado</button>
           </div>
