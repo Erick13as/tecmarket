@@ -13,7 +13,7 @@ function DeliveryMenuView(props) {
             <button onClick={() => handleNavigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
           </div>
         </form>
-        <h1>Órdenes</h1>
+        <h1>Menu</h1>
         <div className='delivery-container'>
           <button onClick={() => handleNavigate('/OrdenesConfirmadas')} className="DeliveryButtons" >Órdenes confirmadas</button>
           <button onClick={() => handleNavigate('/OrdenesEntregadas')} className="DeliveryButtons" >Órdenes entregadas</button>
