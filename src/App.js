@@ -8,6 +8,7 @@ import { AgregarProducto,EditarProductoAdmin,VerMasCliente,AccederTiendaCliente,
 import { CerrarCompra, OrdenesPendientes,OrdenesEntregadas,OrdenesConfirmadas, ListaOrdenes, DetallesOrden,IngresarDireccion,Carrito,FinalizarCompra,DetallesOrdenAdmin,DeliveryMenu,DetallesOrdenDelivery,DetallesOrdenDelivered} from './controllers/CompraController';
 import { Notificaciones } from './controllers/NotificacionController';
 import { MyMapComponent } from './controllers/MapController';
+import { PruebaMapa } from './controllers/PruebaMap';
 
 import "./components/Design.css"
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path='/DeliveryMenu'element={<DeliveryMenu />} />
         <Route path='/OrdenDelivery/:numeroOrden'element={<DetallesOrdenDelivery />} />
         <Route path='/Map/:numeroOrden'element={<MyMapComponent />} />
+        <Route path='/MapaP/'element={<PruebaMapa />} />
         <Route path='/OrdenDelivered/:numeroOrden'element={<DetallesOrdenDelivered />} />
       </Routes>
     </div>
