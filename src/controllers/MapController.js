@@ -53,7 +53,7 @@ const MyMapComponent = () => {
   return (
     <div className="compra-container">
       <form className="formBarra">
-        <button onClick={()=>navigate('/DeliveryMenu')} className='botonOA'>Inicio</button>
+        <button onClick={()=>navigate(`/OrdenDelivery/${numeroOrden}`)} className='botonOA'>Volver</button>
         <div className="botonBarra-container">
             <button onClick={() => navigate('/tecmarket')} className='botonOA2'>Cerrar sesión</button>
         </div>
